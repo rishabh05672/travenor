@@ -14,8 +14,7 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
+      body: Column(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
@@ -62,9 +61,7 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                       color: subtextgrey,
                     ),
                   ),
-                  SizedBox(
-                    height: 23.7,
-                  ),
+                  SizedBox(height: 23.7),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -76,33 +73,43 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
                           color: skyBlue,
                         ),
                       ),
-                      SizedBox(
-                        width: 7,
+                      SizedBox(width: 7),
+                      Container(
+                        width: 13,
+                        height: 7,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: lightskyBlue,
+                        ),
                       ),
-                      Container(width: 13, height: 7, decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: lightskyBlue,
-                      ),),
-                      SizedBox(
-                        width: 7,
+                      SizedBox(width: 7),
+                      Container(
+                        width: 6,
+                        height: 7,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          color: lightskyBlue,
+                        ),
                       ),
-                      Container(width: 6, height: 7, decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: lightskyBlue,
-                      ),),
                     ],
                   ),
                 ],
               ),
             ),
             Spacer(),
-            CommonButton(text: "Get Started", onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Onboardscreen2()),);
-            }),
-            SizedBox(height: 10),
+            CommonButton(
+              text: "Get Started",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Onboardscreen2()),
+                );
+              },
+            ),
+            SizedBox(height: 50),
           ],
         ),
-      ),
+
     );
   }
 }

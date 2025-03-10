@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travenor/pages/sign_in.dart';
 
 import '../common/button.dart';
 import '../common/color.dart';
@@ -14,8 +15,7 @@ class _OnboardScreen3State extends State<OnboardScreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
+      body: Column(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
@@ -96,11 +96,13 @@ class _OnboardScreen3State extends State<OnboardScreen3> {
               ),
             ),
             Spacer(),
-            CommonButton(text: "Next", onPressed: () {}),
-            SizedBox(height: 10),
+            CommonButton(text: "Next", onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SignInScreen()));
+            }),
+            SizedBox(height: 50),
           ],
         ),
-      ),
+
     );
   }
 }

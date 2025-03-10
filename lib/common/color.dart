@@ -6,3 +6,4 @@ const Color textblack = Color(0xff1B1E28);
 const Color subtextgrey = Color(0xff7D848D);
 const Color textwhite = Color(0xffffffff);
 const Color lightskyBlue = Color(0xffCAEAFF);
+const Color textfield = Color(0xffF8F9FA);

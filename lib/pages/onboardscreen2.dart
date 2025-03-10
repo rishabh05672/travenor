@@ -15,8 +15,7 @@ class _Onboardscreen2State extends State<Onboardscreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
+      body: Column(
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
@@ -100,10 +99,10 @@ class _Onboardscreen2State extends State<Onboardscreen2> {
             CommonButton(text: "Next", onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => OnboardScreen3()));
             }),
-            SizedBox(height: 10),
+            SizedBox(height: 50),
           ],
         ),
-      ),
+
     );
   }
 }

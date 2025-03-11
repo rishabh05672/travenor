@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travenor/common/back_arrow_button.dart';
 import 'package:travenor/common/button.dart';
 import 'package:travenor/pages/sign_in.dart';
 
@@ -24,23 +25,7 @@ class _SignUpState extends State<SignUp> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: 50),
-          GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Container(
-              margin: EdgeInsets.only(left: 20),
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("asset/images/back_arrow.png"),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(100),
-              ),
-            ),
-          ),
+          BackArrowButton(),
           SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -101,7 +86,7 @@ class _SignUpState extends State<SignUp> {
                 prefixIcon: Icon(Icons.password_outlined),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    hidePassword ? Icons.visibility : Icons.visibility_off,
+                    hidePassword ? Icons.visibility_off : Icons.visibility,
                   ),
                   onPressed: () {
                     setState(() {

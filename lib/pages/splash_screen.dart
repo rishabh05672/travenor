@@ -11,10 +11,10 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    
-    Future.delayed(Duration(seconds: 1), () {
+
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/onboard');
     });
   }
@@ -33,7 +33,9 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 200,
                 height: 200,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image:AssetImage("asset/images/splash_logo.png") ),
+                  image: DecorationImage(
+                    image: AssetImage("asset/images/splash_logo.png"),
+                  ),
                 ),
               ),
             ],
@@ -46,17 +48,16 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: 133,
                 height: 42,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image:AssetImage("asset/images/travenor_text.png") ),
+                  image: DecorationImage(
+                    image: AssetImage("asset/images/travenor_text.png"),
+                  ),
                 ),
               ),
             ],
           ),
-          SizedBox(
-            height: 49,
-          )
+          SizedBox(height: 49),
         ],
       ),
-
     );
   }
 }

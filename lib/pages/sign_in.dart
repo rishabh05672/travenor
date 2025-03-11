@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:travenor/common/back_arrow_button.dart';
 import 'package:travenor/common/button.dart';
 import 'package:travenor/common/color.dart';
+import 'package:travenor/pages/forgotpassword.dart';
 import 'package:travenor/pages/sign_up.dart';
+import 'package:travenor/pages/verification.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -22,23 +25,7 @@ class _SignInScreenState extends State<SignInScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: 50),
-          GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Container(
-              margin: EdgeInsets.only(left: 20),
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("asset/images/back_arrow.png"),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(100),
-              ),
-            ),
-          ),
+          BackArrowButton(),
           SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +75,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 prefixIcon: Icon(Icons.password_outlined),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    hidePassword ? Icons.visibility : Icons.visibility_off,
+                    hidePassword ? Icons.visibility_off : Icons.visibility,
                   ),
                   onPressed: () {
                     setState(() {
@@ -105,12 +92,20 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  "Forget Password?",
-                  style: TextStyle(
-                    color: orange,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgotPassword()),
+                    );
+                  },
+                  child: Text(
+                    "Forget Password?",
+                    style: TextStyle(
+                      color: orange,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ],
@@ -122,7 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SignUp()),
+                MaterialPageRoute(builder: (context) => Verification()),
               );
             },
           ),
